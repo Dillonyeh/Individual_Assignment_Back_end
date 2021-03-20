@@ -3,6 +3,7 @@ const mysql = require("mysql");
 const path = require("path");
 const express = require("express");
 const app = express();
+app.use("./a1_server/a1"), express.static("public");
 
 const db = mysql.createConnection({
     host: "us-cdbr-east-03.cleardb.com",
@@ -15,4 +16,5 @@ db.connect((err) => {
         console.log(err.message);
     }
     console.log("Connected");
-})
+});
+

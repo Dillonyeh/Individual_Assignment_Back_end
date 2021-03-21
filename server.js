@@ -3,7 +3,7 @@ const mysql = require("mysql");
 const express = require("express");
 const app = express();
 
-app.all("*", (req, res, next) => {
+app.use("*", (req, res, next) => {
     res.set("Access-Control-Allow-Origin", "*");
     res.set("Access-Control-Allow-Methods", "GET, POST, PUT");
     res.set("Access-Control-Allow-Headers", "Content-Type");

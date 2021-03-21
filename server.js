@@ -50,11 +50,9 @@ app.post("/questions", (req, res) => {
     let sql_statement;
     sql_statement = `INSERT INTO questions (question, a1, a2, a3, a4, correct_answer) values ('${question}', '${a1}', '${a2}', '${a3}', '${a4}', '${correct_answer}');` 
     db.query(sql_statement, (err) => {
-        if (err) {
-            throw err;   
-        } else {
-            res.end("Question Added");
-        }
+        if (err) throw err;
+        res.writeHead(200, {'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*'});
+        res.end("Question Added");
     });
 });
 
@@ -70,6 +68,7 @@ app.put("/questions", (req, res) => {
     sql_statement = `UPDATE questions SET a1='${a1}', a2='${a2}', a3='${a3}', a4='${a4}', correct_answer='${correct_answer}' WHERE question='${question}';`
     db.query(sql_statement, (err) => {
         if (err) throw err;
+        res.writeHead(200, {'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*'});
         res.end()
     });
 });

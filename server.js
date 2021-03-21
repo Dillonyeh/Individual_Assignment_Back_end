@@ -69,7 +69,7 @@ app.put("/questions", (req, res) => {
     db.query(sql_statement, (err) => {
         if (err) throw err;
         res.writeHead(200, {'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*'});
-        res.end()
+        res.end();
     });
 });
 

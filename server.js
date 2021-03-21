@@ -33,6 +33,7 @@ app.get("/questions", (req, res) => {
         if (err) {
             throw err;
         } else {
+            res.writeHead(200, {'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*'});
             let quizQuestions = JSON.stringify(result);
             res.end(quizQuestions);
         }

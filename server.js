@@ -15,9 +15,9 @@ app.all("*", (req, res, next) => {
 
 const db = mysql.createConnection({
     host: "us-cdbr-east-03.cleardb.com",
-    user: "b880b15de75399",
-    password: "f6a6ad60",
-    database: "heroku_40b03f318aa3c7d"
+    user: "be6cefc7d4b7e3",
+    password: "7b6696dd",
+    database: "heroku_edfa7b5821f6612"
 });
 db.connect((err) => {
     if(err) {

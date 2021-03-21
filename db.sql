@@ -1,0 +1,12 @@
+USE heroku_edfa7b5821f6612;
+
+CREATE TABLE questions (
+question_id INT NOT NULL AUTO_INCREMENT,
+question VARCHAR(255) NOT NULL UNIQUE,
+correct_answer VARCHAR(255) NOT NULL,
+a1 VARCHAR(255),
+a2 VARCHAR(255),
+a3 VARCHAR(255),
+a4 VARCHAR(255),
+PRIMARY KEY (question_id)
+);
